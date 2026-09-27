@@ -1,0 +1,128 @@
+/* ==========================================================================
+   Alert Component Styles
+   ========================================================================== */
+
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 1rem 1.15rem;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  font-family: var(--font-sans);
+  margin-bottom: 1rem;
+  animation: alertFadeIn 0.25s ease-out;
+  text-align: left;
+}
+
+.alert__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.alert__content {
+  flex-grow: 1;
+}
+
+.alert__title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  line-height: 1.3;
+}
+
+.alert__message {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.alert__close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem;
+  border-radius: var(--radius-sm);
+  color: inherit;
+  opacity: 0.7;
+  cursor: pointer;
+  background: transparent;
+  transition: opacity var(--transition-fast), background-color var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.alert__close-btn:hover {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+/* Alert Variants */
+.alert--info {
+  background-color: rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.25);
+  color: var(--info-500);
+}
+
+.alert--info .alert__title {
+  color: #60a5fa;
+}
+
+.alert--info .alert__message {
+  color: #93c5fd;
+}
+
+.alert--success {
+  background-color: rgba(34, 197, 94, 0.1);
+  border-color: rgba(34, 197, 94, 0.25);
+  color: var(--success-500);
+}
+
+.alert--success .alert__title {
+  color: #4ade80;
+}
+
+.alert--success .alert__message {
+  color: #86efac;
+}
+
+.alert--warning {
+  background-color: rgba(245, 158, 11, 0.1);
+  border-color: rgba(245, 158, 11, 0.25);
+  color: var(--warning-500);
+}
+
+.alert--warning .alert__title {
+  color: #fbbf24;
+}
+
+.alert--warning .alert__message {
+  color: #fde68a;
+}
+
+.alert--error {
+  background-color: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.25);
+  color: var(--danger-500);
+}
+
+.alert--error .alert__title {
+  color: #f87171;
+}
+
+.alert--error .alert__message {
+  color: #fca5a5;
+}
+
+@keyframes alertFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

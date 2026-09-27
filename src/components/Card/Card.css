@@ -1,0 +1,122 @@
+/* ==========================================================================
+   Card Component Styles
+   ========================================================================== */
+
+.card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+  color: var(--text-main);
+  text-align: left;
+}
+
+.card--hoverable:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--border-strong);
+}
+
+.card--clickable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.card--clickable:focus-visible {
+  outline: 2px solid var(--primary-500);
+}
+
+/* Media / Image */
+.card__media {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: var(--bg-surface-elevated);
+}
+
+.card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.card--hoverable:hover .card__img {
+  transform: scale(1.03);
+}
+
+/* Card Body */
+.card__body {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.card__title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.35rem;
+  line-height: 1.35;
+}
+
+.card__subtitle {
+  font-size: 0.85rem;
+  color: var(--primary-400);
+  margin-bottom: 0.6rem;
+  font-weight: 500;
+}
+
+.card__description {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 1rem;
+}
+
+.card__custom-content {
+  margin-bottom: 1rem;
+}
+
+.card__footer {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* Horizontal Card Orientation */
+.card--horizontal {
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .card--horizontal {
+    flex-direction: row;
+  }
+
+  .card--horizontal .card__media {
+    width: 38%;
+    aspect-ratio: auto;
+    min-height: 100%;
+  }
+
+  .card--horizontal .card__body {
+    width: 62%;
+  }
+}
